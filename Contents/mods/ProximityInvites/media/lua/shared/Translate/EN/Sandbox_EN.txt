@@ -1,0 +1,4 @@
+Sandbox_EN = {
+    Sandbox_ProximityInvites = "Proximity Invites",
+    Sandbox_ProximityInvites_range = "Range",
+}
