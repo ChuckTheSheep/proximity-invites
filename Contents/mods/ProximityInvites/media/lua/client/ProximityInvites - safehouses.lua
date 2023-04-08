@@ -52,9 +52,8 @@ function ISSafehouseAddPlayerUI:populateList()
             end
 
             if not util.validPlayerToPlayerDistance(self.player, getPlayerFromUsername(username)) then
-                if newPlayer.tooltip then newPlayer.tooltip = newPlayer.tooltip.." "
-                    newPlayer.tooltip = newPlayer.tooltip..getText("IGUI_outOfRange")
-                end
+                if newPlayer.tooltip then newPlayer.tooltip = newPlayer.tooltip.." " end
+                newPlayer.tooltip = newPlayer.tooltip..getText("IGUI_outOfRange")
             end
 
             local item = self.playerList:addItem(displayName, newPlayer)
