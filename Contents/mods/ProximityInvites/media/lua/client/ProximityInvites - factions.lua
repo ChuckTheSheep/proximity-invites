@@ -10,7 +10,7 @@ function ISFactionAddPlayerUI:onClick(button)
     end
     if button.internal == "ADDPLAYER" then
         if not self.changeOwnership then
-            if util.validPlayerToPlayerDistance(self.player, self.selectedPlayer) then
+            if util.validPlayerToPlayerDistance(self.player, getPlayerFromUsername(self.selectedPlayer)) then
                 local modal = ISModalDialog:new(0,0, 350, 150, getText("IGUI_FactionUI_InvitationSent",self.selectedPlayer), false, nil, nil)
                 modal:initialise()
                 modal:addToUIManager()
