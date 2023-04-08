@@ -59,14 +59,12 @@ function ISFactionAddPlayerUI:populateList()
             end
 
             if not util.validPlayerToPlayerDistance(self.player, getPlayerFromUsername(username)) then
-                newPlayer.tooltip = (newPlayer.tooltip and newPlayer.tooltip.." " or "") ..getText("IGUI_outOfRange")
+                newPlayer.tooltip = (newPlayer.tooltip and newPlayer.tooltip.." " or "") .. getText("IGUI_outOfRange")
             end
 
-            local index = self.playerList:addItem(displayName, newPlayer)
+            local item = self.playerList:addItem(displayName, newPlayer)
             if newPlayer.tooltip then
-                if self.playerList.items[i] then
-                    self.playerList.items[i].tooltip = newPlayer.tooltip
-                end
+                item.tooltip = newPlayer.tooltip
             end
         end
     end
