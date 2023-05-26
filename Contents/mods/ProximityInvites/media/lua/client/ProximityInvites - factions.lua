@@ -8,7 +8,8 @@ function ISFactionAddPlayerUI:populateList()
     if self.changeOwnership then return end
     for i=1, self.playerList:size() do
         local item = self.playerList.items[i]
-        if item and item.username and (not util.validPlayerToPlayerDistance(self.player, getPlayerFromUsername(item.username))) then
+        local playerA, playerB = self.player, getPlayerFromUsername(item.username)
+        if item and item.username and playerA and playerB and (not util.validPlayerToPlayerDistance(playerA, playerB) ) then
             item.tooltip = (item.tooltip and item.tooltip.." " or "") .. getText("IGUI_outOfRange")
         end
     end
