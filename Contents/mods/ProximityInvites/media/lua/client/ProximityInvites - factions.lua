@@ -10,9 +10,8 @@ function ISFactionAddPlayerUI:populateList()
         local item = self.playerList.items[i]
         local playerA, playerB = self.player, getPlayerFromUsername(item.username)
 
-        if not playerB then print("WARNING: proximityInvite can't find: "..item.username) end
-
-        if item and item.username and playerA and playerB and (not util.validPlayerToPlayerDistance(playerA, playerB) ) then
+        --if not playerB then print("WARNING: proximityInvite can't find: "..item.username) end
+        if not item or not item.username or not playerB or (not util.validPlayerToPlayerDistance(playerA, playerB) ) then
             item.tooltip = (item.tooltip and item.tooltip.." " or "") .. getText("IGUI_outOfRange")
         end
     end

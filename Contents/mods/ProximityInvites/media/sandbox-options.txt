@@ -1,4 +1,4 @@
 VERSION = 1,
 
 option ProximityInvites.range
-{type = integer, min = -1, max = 10000, default = 10, page = ProximityInvites, translation = ProximityInvites_range,}
+{type = integer, min = -1, max = 100, default = 10, page = ProximityInvites, translation = ProximityInvites_range,}
